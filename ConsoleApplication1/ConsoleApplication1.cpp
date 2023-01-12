@@ -202,6 +202,5 @@ int main()
     }
 
     printf("\n GAME OVER..");
-
     return 0;
 }
