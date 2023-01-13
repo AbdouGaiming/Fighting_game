@@ -14,6 +14,16 @@ void Affichageetoile(int etoile_Nember = 60)
         Sleep(5);
     }
 }
+void attack(int player_Health)
+{
+    int player_damage = (rand() % (15 - 5 + 1)) + 5;
+    player_Health -= player_damage;
+}
+void heal(int player_Health)
+{
+    int player_Heal = (rand() % (50 - 15 + 1)) + 15;
+    player_Health += player_Heal;
+}
 void affichageHealth(char Player1_Name[20], char Player2_Name[20],int heath, int enmyHealth)
 {
     const int progress = 219;
@@ -59,7 +69,7 @@ int main()
             do
             {
                 Affichageetoile();
-                printf("\n %s Choose between (1) to ATTACKE Or (2) to HEAL: ", Player1_Name);
+                printf("\n %s Choose: (1) to ATTACKE Or (2) to HEAL Or (3) to DEFEND : ", Player1_Name);
                 scanf_s("%d", &Choice);
                 if (Choice != 1 && Choice != 2)
                 {
@@ -71,18 +81,20 @@ int main()
             {
 
             case 1:
-                Player1_Damage = (rand() % (15 - 5 + 1)) + 5;
-                Player2_Health = Player2_Health - Player1_Damage;
+                attack(Player2_Health);
+                //Player1_Damage = (rand() % (15 - 5 + 1)) + 5;
+                //Player2_Health = Player2_Health - Player1_Damage;
                 printf("\n Your attack on %s take away (%d) pointe \n", Player2_Name, Player1_Damage);
 
                 break;
             case 2:
                 Player1_Spell = Player1_Spell - 1;
-                Player1_Heal = (rand() % (50 - 15 + 1)) + 15;
-                Player1_Health = Player1_Health + Player1_Heal;
+                heal(Player1_Health);
+                /*Player1_Heal = (rand() % (50 - 15 + 1)) + 15;
+                Player1_Health = Player1_Health + Player1_Heal;*/
                 printf("\n You have recovered :%d point, You have (%d) Heal rest \n", Player1_Heal, Player1_Spell);
 
-                break;
+                break;                
             }
 
 #pragma endregion
@@ -102,8 +114,9 @@ int main()
                 }
             } while (Choice != 1);
 
-            Player1_Damage = (rand() % (15 - 5 + 1)) + 5;
-            Player2_Health = Player2_Health - Player1_Damage;
+            attack(Player2_Health);
+            /*Player1_Damage = (rand() % (15 - 5 + 1)) + 5;
+            Player2_Health = Player2_Health - Player1_Damage;*/
             printf("\n Your attack on %s take away (%d) points \n", Player1_Name, Player1_Damage);
 
         #pragma endregion
@@ -141,15 +154,17 @@ int main()
                 {
 
                 case 1:
-                    Player1_Damage = (rand() % (15 - 5 + 1)) + 5;
-                    Player1_Health = Player1_Health - Player1_Damage;
+                    attack(Player1_Health);
+                    /*Player1_Damage = (rand() % (15 - 5 + 1)) + 5;
+                    Player1_Health = Player1_Health - Player1_Damage;*/
                     printf("\n Your attack on %s take away (%d) points \n", Player1_Name, Player1_Damage);
 
                     break;
                 case 2:
                     Player2_Spell = Player2_Spell - 1;
-                    Player2_Heal = (rand() % (50 - 15 + 1)) + 15;
-                    Player2_Health = Player2_Health + Player2_Heal;
+                    heal(Player2_Health);
+                    /*Player2_Heal = (rand() % (50 - 15 + 1)) + 15;
+                    Player2_Health = Player2_Health + Player2_Heal;*/
                     printf("\n You have recovered :%d point, You have (%d) Heal rest \n", Player2_Heal, Player2_Spell);
 
                     break;
@@ -173,8 +188,9 @@ int main()
                     }
                 } while (Choice != 1);
 
-                Player2_Damage = (rand() % (15 - 5 + 1)) + 5;
-                Player1_Health = Player1_Health - Player2_Damage;
+                attack(Player1_Health);
+                /*Player2_Damage = (rand() % (15 - 5 + 1)) + 5;
+                Player1_Health = Player1_Health - Player2_Damage;*/
                 printf("\n Your attack on %s take away (%d) points \n", Player1_Name, Player2_Damage);
 
 #pragma endregion
