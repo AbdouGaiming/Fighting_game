@@ -73,7 +73,7 @@ int main()
             case 1:
                 Player1_Damage = (rand() % (15 - 5 + 1)) + 5;
                 Player2_Health = Player2_Health - Player1_Damage;
-                printf("\n Your attack on %s take away:%d \n", Player2_Name, Player1_Damage);
+                printf("\n Your attack on %s take away (%d) pointe \n", Player2_Name, Player1_Damage);
 
                 break;
             case 2:
@@ -104,7 +104,7 @@ int main()
 
             Player1_Damage = (rand() % (15 - 5 + 1)) + 5;
             Player2_Health = Player2_Health - Player1_Damage;
-            printf("\n Your attack on %s take away:%d \n", Player1_Name, Player1_Damage);
+            printf("\n Your attack on %s take away (%d) points \n", Player1_Name, Player1_Damage);
 
         #pragma endregion
         }
@@ -143,7 +143,7 @@ int main()
                 case 1:
                     Player1_Damage = (rand() % (15 - 5 + 1)) + 5;
                     Player1_Health = Player1_Health - Player1_Damage;
-                    printf("\n Your attack on %s take away:%d \n", Player1_Name, Player1_Damage);
+                    printf("\n Your attack on %s take away (%d) points \n", Player1_Name, Player1_Damage);
 
                     break;
                 case 2:
@@ -175,7 +175,7 @@ int main()
 
                 Player2_Damage = (rand() % (15 - 5 + 1)) + 5;
                 Player1_Health = Player1_Health - Player2_Damage;
-                printf("\n Your attack on %s take away:%d \n", Player1_Name, Player2_Damage);
+                printf("\n Your attack on %s take away (%d) points \n", Player1_Name, Player2_Damage);
 
 #pragma endregion
             }
