@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<windows.h>
-#include<mmsystem.h>
+#include <stdio.h>
+#include <windows.h>
+#include <mmsystem.h>
 #include <time.h>
 #include <stdlib.h>
 #pragma region Functions
@@ -43,6 +43,7 @@ void affichageHealth(char Player1_Name[20], char Player2_Name[20],int heath, int
     printf(" %d\n\n", enmyHealth);
 }
 #pragma endregion
+
 int main()
 {
     int Choice, Player1_Damage, Player2_Damage, Player1_Spell = 3, Player2_Spell = 3, Player1_Health = 50, Player2_Health = 50, Player1_Heal, Player2_Heal;
